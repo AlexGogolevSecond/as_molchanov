@@ -55,6 +55,4 @@ def event_loop():
             pass
 
 
-
-
 tasks.append(server())
