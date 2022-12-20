@@ -34,9 +34,9 @@ def event_loop():
     while True:
         # нужно получить выборку объектов, которые готовы для чтения или для записи
         print(datetime.now(), ': в методе event_loop, перед selector.select()')
-        events = selector.select()  # (key, events)
+        keys_events = selector.select()  # [(key, events),...]
         print(datetime.now(), ': в методе event_loop, перед циклом')
-        for key, _ in events:
+        for key, _ in keys_events:
             print(datetime.now(), ': в цикле; key.data:', key.data)
             print(datetime.now(), ': в цикле; key.fileobj:', key.fileobj)
             callback = key.data
