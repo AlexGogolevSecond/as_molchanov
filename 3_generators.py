@@ -36,6 +36,3 @@ while tasks:
         tasks.append(task)
     except StopIteration:
         pass
-
-
-
