@@ -16,6 +16,7 @@ def server():
         print('connection from', addr)
         client(client_socket)
 
+
 def client(client_socket):
     while True:
         yield ('read', client_socket)
@@ -31,6 +32,7 @@ def client(client_socket):
             client_socket.send(response)  # write
 
     client_socket.close()
+
 
 def event_loop():
     while any([tasks, to_read, to_write]):
